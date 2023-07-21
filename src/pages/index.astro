@@ -66,6 +66,7 @@ import Layout from '@layouts/Layout.astro';
 			gap: 10px;
 			font-size: 1.2rem;
 			padding-bottom:10px;
+			border-radius:0;
 		}
 		&-mouse , &-scroll{
 			display: flex;
@@ -111,6 +112,14 @@ import Layout from '@layouts/Layout.astro';
 		font-size: 1.8rem;
 		font-weight: bold;
 		padding: 20px;
+		@include sp{
+			font-size: 1.6rem;
+			width: 80%;
+			margin-right: auto;
+			p{
+				line-height: 1.4;
+			}
+		}
 		&.is-1{
 			margin-top: 3500px;
 		}
