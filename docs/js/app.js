@@ -43430,7 +43430,7 @@ let controls;
 let mixer;
 let clock;
 let animations;
-const url = "/3d/mycity.glb";
+const url = "../3d/mycity.glb";
 const canvas = document.getElementById("canvas");
 const btnAction = document.getElementById("btn-action");
 const btnStop = document.getElementById("btn-stop");
