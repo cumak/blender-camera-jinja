@@ -33,6 +33,7 @@ import Layout from '@layouts/Layout.astro';
 </Layout>
 
 <style lang="scss">
+	@use '@styles/foundation/variable' as *;
 	#canvas{
 		position: fixed;
 		top: 0;
@@ -57,6 +58,15 @@ import Layout from '@layouts/Layout.astro';
 		padding: 5px 20px;
 		background: rgba(0, 0, 0, 0.707);
 		z-index: 2;
+		@include sp{
+			width: 100%;
+			right: 0;
+			bottom: 0;
+			flex-wrap:wrap;
+			gap: 10px;
+			font-size: 1.2rem;
+			padding-bottom:10px;
+		}
 		&-mouse , &-scroll{
 			display: flex;
 			align-items: center;
