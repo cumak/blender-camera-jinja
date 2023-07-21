@@ -20,7 +20,7 @@ let mixer;
 let clock;
 let animations;
 let animationFlame;
-const url = '../3d/mycity.glb';
+const url = '/blender-camera-jinja/3d/mycity.glb';
 
 const canvas = document.getElementById('canvas');
 const btnAction = document.getElementById('btn-action') as HTMLButtonElement;
