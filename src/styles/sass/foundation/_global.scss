@@ -1,0 +1,122 @@
+@use 'variable' as *;
+
+html {
+	font-size: 62.5%;
+	@include sp{
+		font-size: 62.8%;
+	}
+	&:has(.is-android) {
+		font-size: 58%;
+	}
+}
+
+body{
+	font-size:1.4rem;
+	color: $fontColor;
+	@include font-go;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	overflow: hidden;
+	&.scroll {
+		overflow: auto;
+	}
+}
+
+.for-pc{
+	@include sp{
+		display: none !important;
+	}
+}
+
+.for-sp{
+	@include pc-tab{
+		display: none !important;
+	}
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+img{
+	max-width:100%;
+	vertical-align: bottom;
+}
+
+a{
+	text-decoration:none;
+	transition:all .3s;
+	img{
+		opacity:1;
+		transition:all .3s;
+	}
+	@include pc-tab{
+		&:hover{
+				img{
+					opacity:0.8;
+				}
+		}
+	}
+	@include sp{
+		&:active{
+				img{
+					opacity:0.8;
+				}
+		}
+	}
+}
+
+p{
+	line-height:190%;
+	& + p{
+		margin-top: 1.2rem;
+	}
+	a{
+		@include pc-tab{
+			&:hover{
+				color:$linkColor;
+			}
+		}
+		@include sp{
+			&:active{
+				color:$linkColor;
+			}
+		}
+	}
+}
+
+ol{
+	padding-left: 2rem;
+}
+
+ruby rt{
+	font-size:40%;
+}
+
+em{
+	color:#e13838;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+textarea{
+  appearance: none;
+  padding: 8px 10px;
+	border: 1px solid  #b7b7b7;
+	@include sp{
+		font-size: 1.6rem;
+	}
+}
+select{
+	padding: 8px 10px;
+	border: 1px solid  #b7b7b7;
+}
+textarea{
+  width: 100%;
+  height: 200px;
+}

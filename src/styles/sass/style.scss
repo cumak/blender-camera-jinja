@@ -1,0 +1,26 @@
+@forward 'foundation/variable.scss';
+
+//リセット
+@forward 'foundation/reset.scss';
+
+//共通（グローバル）
+@forward 'foundation/global.scss';
+
+//共通（細かいパーツ）
+@forward 'parts/btn.scss';
+@forward 'parts/col.scss';
+@forward 'parts/float.scss';
+@forward 'parts/font.scss';
+@forward 'parts/list.scss';
+@forward 'parts/other.scss';
+@forward 'parts/section.scss';
+@forward 'parts/table.scss';
+@forward 'parts/title.scss';
+
+//共通（案件毎の共通レイアウト component以上サイズ）
+@forward 'components/common.scss';
+@forward 'components/footer.scss';
+@forward 'components/header.scss';
+@forward 'components/navi.scss';
+//各ページ
+@forward 'pages/top.scss';

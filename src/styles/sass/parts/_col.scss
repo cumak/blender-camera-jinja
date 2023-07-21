@@ -1,0 +1,117 @@
+@use '../foundation/variable' as *;
+
+//カラム
+.col {
+  display: flex;
+  flex-flow:row wrap;
+  @include sp {
+    display: block;
+  }
+
+  &.is-sp-flex{
+    @include sp{
+      display: flex;
+    }
+  }
+
+  &.is-oneline{
+    flex-wrap:nowrap;
+    justify-content: space-between;
+  }
+
+  &-contents {
+    width: 100%;
+    @include sp {
+      max-width: 100%;
+      .col:not(.is-sp-flex) &{
+        & + &{
+          margin-top: 10px;
+        }
+      }
+    }
+    .is-oneline & {
+      margin-bottom: 0;
+      & + .col-contents {
+        margin-left: 2%;
+      }
+    }
+    .is-oneline:not(.is-sp-flex) &{
+      @include sp{
+        max-width: 100%;
+        margin: auto;
+        & + .col-contents{
+          margin-top: 30px;
+        }
+      }
+    }
+    .is-2 & {
+      max-width: 48%;
+      &:nth-child(even){
+        margin-left: calc(4% - 1px);
+      }
+      &:nth-child(n + 3){
+        margin-top: 30px;
+        @include sp{
+          margin-top: 30px;
+        }
+      }
+    }
+    .is-2:not(.is-sp-flex) &{
+      @include sp{
+        max-width: 100%;
+        margin: auto;
+        & + .col-contents{
+          margin-top: 30px;
+        }
+      }
+    }
+    .is-3 & {
+      max-width: 32%;
+      &:not(:nth-child(3n + 1)){
+        margin-left: calc(2% - 1px);
+      }
+      &:nth-child(n + 4){
+        margin-top: 30px;
+        @include sp{
+          margin-top: 10px;
+        }
+      }
+    }
+    .is-3:not(.is-sp-flex) &{
+      @include sp{
+        max-width: 100%;
+        margin: auto;
+        & + .col-contents{
+          margin-top: 30px;
+        }
+      }
+    }
+    .is-4 & {
+      max-width: 23%;
+      &:not(:nth-child(4n + 1)){
+        margin-left: calc(2.6% - 1px);
+      }
+      &:nth-child(n + 5){
+        margin-top: 30px;
+        @include sp{
+          margin-top: 10px;
+        }
+      }
+    }
+    .is-4:not(.is-sp-flex) &{
+      @include sp{
+        max-width: 100%;
+        margin: auto;
+        & + .col-contents{
+          margin-top: 30px;
+        }
+      }
+    }
+    &-title {
+      margin-bottom: 5px;
+    }
+    &-text {
+      margin-top: 5px;
+    }
+  }
+}

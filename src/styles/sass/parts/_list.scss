@@ -1,0 +1,41 @@
+@use '../foundation/variable' as *;
+
+.list-normal {
+  > li {
+    margin: 0 0 10px;
+    text-indent: -1.6rem;
+    padding-left: 1.6rem;
+    &::before {
+      content: '●';
+      margin-right: 5px;
+      font-size: 10px;
+      font-family: sans-serif;
+      color: $themeColor;
+    }
+  }
+}
+
+.list-number {
+  padding: 0 0 0 25px;
+
+  > li {
+    list-style: decimal;
+    margin: 0 0 10px;
+  }
+}
+
+//olで、数字だけ太字にする
+.list-numbold{
+  counter-reset: li;
+  list-style: none;
+  padding-left: 2.5rem;
+  > li{
+    &::before {
+      margin:0 5px 0 -2rem;
+      width: 2.5rem;
+      content:counter(li) ". ";
+      counter-increment: li;
+      font-weight: bold;
+    }
+  }
+}

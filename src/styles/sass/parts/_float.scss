@@ -1,0 +1,63 @@
+@use '../foundation/variable' as *;
+
+//画像（テキスト回り込み）
+.flImgContents {
+  &-img {
+    max-width: 37%;
+    width: 100%;
+    @include sp {
+      max-width: 100%;
+    }
+
+    &.is-s{
+      max-width: 200px;
+      @include sp{
+        max-width: 100%;
+      }
+    }
+    &.is-ss{
+      max-width: 100px;
+      @include sp{
+        max-width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    &.is-l{
+      max-width: 47%;
+      @include sp{
+        max-width: 100%;
+      }
+    }
+
+    &.is-fr {
+      float: right;
+      margin: 0 0 20px 40px;
+      @include sp {
+        margin: 0 auto 20px;
+        &:not(.is-sp-float){
+          float: none;
+        }
+        &.is-sp-float{
+          width: 35%;
+          margin: 0 0 10px 10px;
+        }
+      }
+    }
+
+    &.is-fl {
+      float: left;
+      margin: 0 40px 20px 0;
+      @include sp {
+        margin: 0 auto 20px;
+        &:not(.is-sp-float){
+          float: none;
+        }
+        &.is-sp-float{
+          width: 35%;
+          margin: 0 10px 10px 0;
+        }
+      }
+    }
+  }
+}

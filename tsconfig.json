@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es2020",
+    "module": "es2020",
+    "moduleResolution":"node",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@styles/*": ["src/styles/sass/*"]
+    }
+  },
+  "lib": [
+    "dom",
+    "es2019"
+  ],
+  "exclude": ["node_modules"]
+}

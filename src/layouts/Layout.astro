@@ -1,0 +1,44 @@
+---
+import '@styles/style.scss'
+import '@components/LocalScripts.astro'
+import Header from '@layouts/Header.astro'
+import Footer from '@layouts/Footer.astro'
+
+export interface Props {
+	title?: string;
+	description?: string;
+	ogType?: string;
+}
+
+const title = Astro.props.title ? Astro.props.title + ' | タイトル' : 'タイトル';
+const description = Astro.props.description || 'スクロールと共に3Dのタイムを進める'
+const ogType = Astro.props.ogType || 'article'
+
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix={`og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# ${ogType}: http://ogp.me/ns/${ogType}#`}>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+	<meta name="description" content={description}>
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+	<meta name="format-detection" content="telephone=no">
+	<meta property="og:locale" content="ja_JP">
+	<meta property="og:title" content={title}>
+	<meta property="og:description" content={description}>
+	<meta property="og:type" content={ogType}>
+	<!-- <meta property="og:image" content="http://●●●●●●●●●.jp/img/common/ogimage.jpg"> -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<link rel="apple-touch-icon" href="/img/common/apple-touch-icon.png">
+</head>
+<body>
+	<div id="container" lang="ja">
+		<Header />
+		<slot />
+		<Footer />
+	</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout title="three and blender scroll">
+	<main>
+		<canvas id="canvas"></canvas>
+		<div class="btns">
+			<!-- <button id="btn-action">アクション！</button>
+			<button id="btn-stop">ストップ</button>
+			<button id="btn-start">スタート</button> -->
+			<label class="btns-range" for="">手動カメラ <input id="btn-range" type="range" max="250" value="0"></label>
+			<label class="btns-mouse" for="btn-mouseControl"><input name="control" id="btn-mouseControl" type="checkbox"> マップコントロール</label>
+			<label class="btns-scroll" for="btn-scroll"><input name="control" id="btn-scroll" type="checkbox"> スクロールでカメラを進める</label>
+			<span class="paramScrollY">スクロール量 <span id="scrollY"></span></span>
+		</div>
+		<div class="contents">
+			<div class="sectionbox is-1">
+				<p>これはHTMLコンテンツです。</p>
+				<p>左には、バス停とポストがあるよ</p>
+			</div>
+			<div class="sectionbox is-2">
+				<p>右には猫がいます</p>
+			</div>
+			<div class="sectionbox is-3">
+				<p>まっすぐいくと</p>
+			</div>
+			<div class="sectionbox is-4">
+				<p>おいなりさん</p>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style lang="scss">
+	#canvas{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		pointer-events: none;
+		&.mouseControl{
+			pointer-events: all;
+			z-index: 2;
+		}
+	}
+
+	.btns{
+		position: fixed;
+		bottom: 10px;
+		right: 30px;
+		display: flex;
+		align-items: center;
+		border-radius: 5px;
+		gap: 20px;
+		padding: 5px 20px;
+		background: rgba(0, 0, 0, 0.707);
+		z-index: 2;
+		&-mouse , &-scroll{
+			display: flex;
+			align-items: center;
+			color: #fff;
+			gap: 5px;
+			input{
+				font-weight: bold;
+			}
+		}
+		&-range{
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: #fff;
+		}
+		.paramScrollY{
+			color: #fff;
+			#scrollY{
+				width: 60px;
+				margin-left: 5px;
+				background: #fff;
+				color: #000;
+				text-align: center;
+				display: inline-block;
+			}
+		}
+	}
+
+	.contents{
+		position: relative;
+		z-index: 1;
+	}
+
+	.sectionbox{
+		width: 40%;
+		height: fit-content;
+		margin-left: auto;
+		margin-right: 20px;
+		border-radius: 10px;
+		border:4px solid rgba(0, 0, 0, 0.707);
+		background: rgba(253, 253, 253, 0.777);
+		font-size: 1.8rem;
+		font-weight: bold;
+		padding: 20px;
+		&.is-1{
+			margin-top: 3500px;
+		}
+		&.is-2{
+			margin-top: 2300px;
+		}
+		&.is-3{
+			margin-top: 2800px;
+		}
+		&.is-4{
+			margin-top: 1200px;
+			margin-bottom: 1000px;
+		}
+	}
+</style>

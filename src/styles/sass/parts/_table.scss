@@ -1,0 +1,68 @@
+@use '../foundation/variable' as *;
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.table-1{
+  border-collapse:collapse;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  tr{
+    border-bottom: 2px dotted #ccc;
+  }
+  th,td{
+    padding: 13px;
+    @include sp{
+      font-size: 1.3rem;
+    }
+  }
+  th{
+    background: #fcfbf5;
+    color: $themeColor;
+  }
+  a{
+    color: $linkColor;
+  }
+  &.is-sideTitle{
+    @include sp{
+      th{
+        padding: 10px 0;
+      }
+      td{
+        padding: 20px 0;
+      }
+    }
+  }
+}
+
+//左にth列がある場合はスマホでは上にタイトルがくる
+.is-sideTitle{
+  @include sp{
+    tr{
+      display: block;
+    }
+    th,td{
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+    th{
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+  }
+}
+//セルを均等幅に
+.wfix{
+  table-layout: fixed;
+}
+
+//スマホ　横スクロールが必要なものはdivで囲んで下記クラス付与
+.tableScrollWrap{
+  @include sp{
+    overflow-x: scroll;
+    -webkit-overflow-scrolling:touch;
+    width: 100%;
+  }
+}

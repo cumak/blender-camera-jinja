@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "$": false
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "quotes": ["error","single"],
+    "prefer-const": "error",
+    "arrow-body-style": ["error", "always"]
+  }
+}

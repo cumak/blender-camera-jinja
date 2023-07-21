@@ -1,0 +1,50 @@
+@use '../foundation/variable' as *;
+
+.section-small {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section-1 {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.section-2 {
+  margin-top: 40px;
+  margin-bottom: 70px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.section-3 {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+.section-center{
+  max-width: $w;
+  width: 100%;
+  margin-right:auto;
+  margin-left:auto;
+  @include md-tab{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.section-center-sp{
+  @include sp{
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

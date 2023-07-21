@@ -1,0 +1,28 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "wp": "astro dev & npm run watch:sass & npm run esbuild",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "watch:sass": "sass --no-source-map --watch src/styles/sass/:wp/wp-content/themes/nakamura-cms/css/",
+    "esbuild": "node esbuild.mjs",
+    "webp": "find public/img -type f -name '*.jpg' -or -name '*.jpeg' -or -name '*.png' -exec sh -c 'cwebp -near_lossless 60 \"$0\" -o \"${0%.*}.webp\"' {} \\;"
+  },
+  "dependencies": {
+    "@types/node": "^20.4.2",
+    "astro": "^2.8.3",
+    "astro-relative-links": "^0.3.4",
+    "esbuild": "^0.18.12",
+    "ez.js": "^1.0.3",
+    "jump.js": "^1.0.2",
+    "sass": "^1.63.6",
+    "three": "^0.154.0",
+    "watch": "^1.0.2"
+  }
+}

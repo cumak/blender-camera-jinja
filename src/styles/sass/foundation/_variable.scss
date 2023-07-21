@@ -1,0 +1,107 @@
+// 変数
+$themeColor:#ef4d63;
+$themeColor-lt:#fcf1ed;
+$pointColor:#ac8839;
+$linkColor:#019ab3;
+$bgColor:#f7f7f7;
+$fontColor: #000;
+
+//コンテンツ幅
+$w:1000px;
+
+// mediaquery
+$widthXL  : 1100px; //PC大（コンテンツ幅＋100px）
+$widthLG  : 980px; //PC小
+$widthTab : 768px; //タブレット
+
+@mixin lg {
+  @media (min-width: $widthXL) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: $widthLG) and (max-width: ($widthXL - 1)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (min-width: $widthTab) and (max-width: ($widthLG - 1)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($widthTab - 1)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: $widthLG) {
+    @content;
+  }
+}
+@mixin pc-tab {
+  @media (min-width: ($widthTab)){
+    @content;
+  }
+}
+@mixin md-tab {
+  @media (min-width: $widthTab) and (max-width: ($widthXL - 1)) {
+    @content;
+  }
+}
+@mixin tab-sp {
+  @media (max-width: ($widthLG - 1)) {
+    @content;
+  }
+}
+
+@mixin ie11() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin hover() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// font
+$font-go-base: "Hiragino Kaku Gothic Pro" ,"游ゴシック体", "Yu Gothic Medium" , "Yu Gothic", Meiryo ,sans-serif;
+$font-mi-base: "Hiragino Mincho ProN", "Yu Mincho","YuMincho", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+@mixin font-go(){
+  font-family: #{$font-go-base};
+}
+@mixin font-mi(){
+  font-family: #{$font-mi-base};
+}
+
+// mixin
+@mixin section-center(){
+  margin-left:auto;
+  margin-right:auto;
+  max-width: $w;
+  width:100%;
+  @include md-tab{
+    max-width:90%;
+    width:90%;
+  }
+}
+@mixin section-center-sp(){
+  @include sp{
+    margin-left:auto;
+    margin-right:auto;
+    max-width:90%;
+    width:90%;
+  }
+}
+
+@mixin clearfix(){
+  &::after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+}

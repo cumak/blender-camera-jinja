@@ -1,0 +1,32 @@
+@use '../foundation/variable' as *;
+
+.al-r {
+  text-align: right;
+}
+
+.al-c {
+  text-align: center;
+}
+
+.full {
+  width: 100%;
+}
+
+.size-30 {
+  width: 30%;
+  @include sp{
+    width: 70%;
+  }
+}
+
+.size-60 {
+  width: 60%;
+  @include sp{
+    width: 100%;
+  }
+}
+
+.indent{
+  width: 97%;
+  margin: 0 0 0 auto;
+}
